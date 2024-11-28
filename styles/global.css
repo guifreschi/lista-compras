@@ -6,7 +6,6 @@
 
 :root {
   --background-primary: #F4F5FB;
-  --background-secondary: #FFFFFF;
 
   --color-brand: #CA3884;
   --color-brand-hover: #A52C6B;
@@ -22,11 +21,27 @@
   --ff-base: "Inter", sans-serif;
 
   --title: 700 1.5rem/2rem var(--ff-base);
-  --label: 600 1rem/1.25rem var(--ff-base);
+  --label: 500 1rem/1.25rem var(--ff-base);
   --paragraph: 500 1.5rem/1.25rem var(--ff-base);
   --link: 500 .875rem/1rem var(--ff-base);
 }
 
 body {
   background-color: var(--background-primary);
+  font: var(--paragraph);
 }
+
+.container {
+  margin-inline: 2rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (width >= 79.6em) {
+  .container {
+    margin-inline: 23.125rem;
+  }
+}
+

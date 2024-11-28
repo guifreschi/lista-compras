@@ -5,9 +5,87 @@
   margin-top: 1.5625rem;
 }
 
+#hero {
+  & img#back {
+    margin-top: 4.875rem;
+    margin-left: auto;
+  }
+
+  & h2 {
+    font: var(--title);
+    margin-top: 1rem;
+  }
+
+  & form {
+    margin-top: 2.75rem;
+    display: flex;
+    flex-direction: column;
+    
+    & input, button {
+      outline: 0;
+      width: 20.375rem;
+      height: 2.75rem;
+      border-radius: 12px;
+    }
+
+    & input {
+      margin-bottom: 1rem;
+      border: 2px solid var(--border);
+      padding-left: 1.125rem; 
+      transition: 0.2s;
+
+      &:hover {
+        border-color: var(--border-hover);
+      }
+
+      &::placeholder {
+        color: var(--content-tertiary);
+      }
+    }
+
+
+    & button {
+      background-color: var(--color-brand);
+      border: none;
+      color: white;
+      padding-left: 1.125rem; 
+      transition: 0.2s;
+      font: var(--label);
+
+      &:hover {
+        background-color: var(--color-brand-hover);
+      }
+    }
+
+    & label {
+      display: none;
+    }
+  }
+}
+
 @media (max-width: 79.6em) {
   #logo {
     display: none;
   }
 }
 
+@media (width >= 79.6em) {
+  #hero {
+    & form {
+      flex-direction: row;
+      text-align: center;
+
+      & input {
+        width: 28.125rem;
+        height: 2.75rem;
+        margin-right: 1rem;
+      }
+
+      & button {
+        width: 10rem;
+        height: 2.75rem;
+        padding-left: 0;
+      }
+    }
+  }
+}
