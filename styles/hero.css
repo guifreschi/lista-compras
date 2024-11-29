@@ -76,6 +76,9 @@
     }
   }
 
+  & ul {
+    margin-top: 2.5rem;
+  }
   & .checkbox-wrapper {
     position: relative;
     background-color: white;
@@ -86,7 +89,7 @@
     font: var(--label);
     color: var(--content-secondary);
     align-items: center;
-    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
   
     .checkbox-image {
       flex: 0 0 1rem;
