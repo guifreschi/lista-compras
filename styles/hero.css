@@ -9,6 +9,11 @@
   & img#back {
     margin-top: 4.875rem;
     margin-left: auto;
+    transition: 0.2s;
+
+    &:hover, &:focus-within {
+      filter: brightness(0.8);
+    }
   }
 
   & h2 {
@@ -16,7 +21,7 @@
     margin-top: 1rem;
   }
 
-  & form {
+  & form#add {
     margin-top: 2.75rem;
     display: flex;
     flex-direction: column;
@@ -34,8 +39,16 @@
       padding-left: 1.125rem; 
       transition: 0.2s;
 
-      &:hover {
+      &:hover, &:focus-within {
         border-color: var(--border-hover);
+      }
+
+      &:focus {
+        border-color: var(--color-brand);
+
+        &::placeholder {
+          color: var(--content-primary);
+        }
       }
 
       &::placeholder {
@@ -51,14 +64,68 @@
       padding-left: 1.125rem; 
       transition: 0.2s;
       font: var(--label);
+      cursor: pointer;
 
-      &:hover {
+      &:hover, &:focus-within {
         background-color: var(--color-brand-hover);
       }
     }
 
     & label {
       display: none;
+    }
+  }
+
+  & .checkbox-wrapper {
+    position: relative;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    width: 20.5rem;
+    height: 3.625rem;
+    font: var(--label);
+    color: var(--content-secondary);
+    align-items: center;
+    margin-top: 2.5rem;
+  
+    .checkbox-image {
+      flex: 0 0 1rem;
+      height: 1rem;
+      background: no-repeat center center;
+      margin-left: .75rem;
+      margin-right: .53125rem;
+      background-size: cover;
+      background-image: url(/assets/checkbox.svg);
+      cursor: pointer;
+    }
+
+    .trash-img {
+      flex: 0 0 1.5rem;
+      height: 2rem;
+      width: 2rem;
+      margin-left: auto;
+      margin-right: .78125rem;
+      background-size: cover;
+      background: no-repeat center center;
+      cursor: pointer;
+      background-image: url(/assets/trash.svg);
+      transition: 0.3s;
+
+      &:hover {
+        filter: brightness(0.1);
+      }
+    }
+  
+    &:hover, &:focus-within {
+      .checkbox-image {
+        background-image: url(/assets/checkbox-hover.svg);
+      }
+    }
+  
+    &:click {
+      .checkbox-image {
+        background-image: url(/assets/checkbox-active.svg);
+      }
     }
   }
 }
@@ -71,7 +138,7 @@
 
 @media (width >= 79.6em) {
   #hero {
-    & form {
+    & form#add {
       flex-direction: row;
       text-align: center;
 
@@ -79,6 +146,7 @@
         width: 28.125rem;
         height: 2.75rem;
         margin-right: 1rem;
+        margin-bottom: 0;
       }
 
       & button {
@@ -86,6 +154,11 @@
         height: 2.75rem;
         padding-left: 0;
       }
+    }
+
+    & .checkbox-wrapper {
+      width: 39.25rem;
+      height: 3.125rem;
     }
   }
 }

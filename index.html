@@ -14,18 +14,36 @@
 <body>
   <img src="assets/logo.svg" alt="Logo do QuickList" id="logo">
 
-  <section id="hero">
-    <div class="container">
-      <img src="assets/back.svg" alt="voltar" id="back">
+  <div class="container">
+    <section id="hero">
+
+      <a href="#">
+        <img src="assets/back.svg" alt="voltar" id="back">
+      </a>
 
       <h2>Compras da semana</h2>
 
-      <form method="post">
+      <form method="post" id="add">
         <label for="">Adicionar um novo item</label>
         <input type="text" required placeholder="Adicione um novo item">
         <button>Adicionar item</button>
       </form>
-    </div>
-  </section>
+      
+      <ul id="itemsContainer">
+        <li class="checkbox-wrapper">
+            <div class="checkbox-image"></div>
+            <p>Pão de Forma</p>
+            <div class="trash-img"></div>
+        </li>
+    </ul>
+    </section>
+
+    <footer>
+      <img src="assets/warning.svg" alt="Aviso" id="warning">
+      <p>O item foi removido da lista</p>
+      <img src="assets/close_symbol.svg" alt="Fechar" id="close-symbol">
+    </footer>
+  </div>
+  <script src="scripts.js"></script>
 </body>
 </html>
